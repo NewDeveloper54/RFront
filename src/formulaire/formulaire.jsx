@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './formulaire.css';
-{/* import { Link } from 'react-router-dom';
-  */}
+ import { Link } from 'react-router-dom';
+  
 
 const Formulaire = () => {
 
@@ -41,11 +41,10 @@ const[email, setEmail] =useState("");
 </div>         
 
 
-{/* 
+
 <Link to="/roulette">
           <input className="login-button" type="submit" value="Valider et passer à la roulette" />
           </Link>
-*/}
  
         </form>
 

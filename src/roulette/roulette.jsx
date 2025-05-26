@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './roulette.css';
 import hoody from "../assets/hoodyBG.png";
 import trophy from "../assets/trophee.png";
+import { Link } from 'react-router-dom';
+
 
 const Roulette = () => {
   const [isDown, setIsDown] = useState(false);
@@ -95,7 +97,9 @@ const Roulette = () => {
           <h2>Bravo ! Vous avez gagné : {infos[winnerIndex + 1].title}</h2>
         </div>
       )}
-
+<Link className="rouleteLink" to="/">
+        <button className="rouletteBtn">back</button>
+      </Link>
       
     </div>
   );
