@@ -87,7 +87,7 @@ const Roulette = () => {
         </div>
 
         <div className="pointer"></div>
-        <button onClick={handleSpin} className={`lanceButton ${isDown}`}>Lancer</button>
+        <button style={{backgroundColor:"red"}} onClick={handleSpin} className={`lanceButton ${isDown}`}>Lancer</button>
       </div>
 
       {winnerIndex !== null && !isSpinning && (
