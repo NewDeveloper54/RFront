@@ -1,0 +1,139 @@
+body{
+      background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+}
+#roulette{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+height: 1920px;
+}
+
+.rouletteBtn{
+    text-decoration: underline;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  color: white;
+  padding-block: 15px;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.rouleteLink{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+.circle {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  transform: scale(1.5);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.lanceButton{
+    position: relative;
+    top: 35%;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.shape>img{
+    transform: rotate(180deg); 
+}
+.shapeLose>p{
+      transform: rotate(180deg); 
+}
+.p{
+    text-align: center;
+    width: 60px;
+    font-size: 10px;
+transform: rotate(180deg);}
+
+.triangle {
+  position: absolute;
+  top: -7%;
+  left: 35%;
+  transform-origin: bottom center;
+}
+
+.shape {
+  width: 120px;
+  height: 230px;
+  background: linear-gradient(to top, blue, cyan);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 60px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.shapeLose{
+  width: 80px;
+  margin-left: 40px;
+  margin-top: -20px;
+  height: 250px;
+  background: linear-gradient(to top, cyan , rgb(213, 244, 244));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 60px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.shapeLose:hover{
+    transform: scale(1.2) translateY(15px);
+
+}
+
+
+.shape:hover {
+  transform: scale(1.2) translateY(15px);
+}
+
+.rouletteBtn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.rouleteLink {
+  display: flex;
+  justify-content: center;
+}
+
+
