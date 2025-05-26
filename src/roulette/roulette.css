@@ -10,9 +10,11 @@ height: 1920px;
 }
 
 .rouletteBtn{
+    opacity: 0;
     text-decoration: underline;
   display: block;
   width: 100%;
+  height: 60px;
   font-weight: bold;
   background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
   color: white;
@@ -23,10 +25,17 @@ height: 1920px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
+.rouletteBtn.shown{
+    opacity: 1;
+    transition: 1s;
+}
 .rouleteLink{
     width: 100px;
     display: flex;
     justify-content: center;
+}
+.circleWrapper{
+    transform: scale(1.5);
 }
 .circle {
   width: 400px;
@@ -43,14 +52,17 @@ height: 1920px;
 
 .lanceButton{
     position: relative;
-    top: 35%;
-    width: 80px;
-    height: 35px;
+    top: 20%;
+    left: 145px;
+    width: 110px;
+    height: 45px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-
+background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+color: white;
 }
+
 
 @keyframes turn {
   0% {
@@ -137,3 +149,10 @@ transform: rotate(180deg);}
 }
 
 
+.cicleInfo{
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 
 
 const Roulette = () => {
+
+    const [isShown, setIsShown] = useState("");
+
+
+
+
   const [isDown, setIsDown] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [winnerIndex, setWinnerIndex] = useState(null);
@@ -29,9 +35,20 @@ const Roulette = () => {
 
     setIsDown(true);
     setIsSpinning(true);
+    setTimeout(() => {
+
+    setIsShown(isShown === "shown" ? "" : "shown");
+
+    },5000);
+
+
+    
+
+
+    
 
     const btn = document.querySelector(".lanceButton");
-    btn.style.transform = "translateY(60px)";
+    btn.style.opacity = "0";
     btn.style.transition = "1s";
 
     const randomIndex = Math.floor(Math.random() * 8);
@@ -48,6 +65,7 @@ const Roulette = () => {
 
   return (
     <div id="roulette">
+        <div className="cicleInfo">
       <div className="circleWrapper">
         <div
           className="circle"
@@ -88,8 +106,9 @@ const Roulette = () => {
           })}
         </div>
 
+
         <div className="pointer"></div>
-        <button style={{backgroundColor:"red"}} onClick={handleSpin} className={`lanceButton ${isDown}`}>Lancer</button>
+        <button onClick={handleSpin} className={`lanceButton  ${isDown}`}>Lancer</button>
       </div>
 
       {winnerIndex !== null && !isSpinning && (
@@ -98,8 +117,10 @@ const Roulette = () => {
         </div>
       )}
 <Link className="rouleteLink" to="/">
-        <button className="rouletteBtn">back</button>
+        <button className={`rouletteBtn ${isShown}`}>back</button>
       </Link>
+
+      </div>
       
     </div>
   );

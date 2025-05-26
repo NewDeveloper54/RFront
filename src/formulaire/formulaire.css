@@ -135,10 +135,13 @@ Link{
   transition: all 0.2s ease-in-out;
 }
 
+
 .social-account-container .social-accounts .social-button .svg {
   fill: white;
   margin: auto;
 }
+
+
 
 .social-account-container .social-accounts .social-button:hover {
   transform: scale(1.2);
@@ -159,7 +162,6 @@ Link{
   color: #0099ff;
   font-size: 9px;
 }
-
 
 
 #formulaire{

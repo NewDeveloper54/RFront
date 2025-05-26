@@ -13,7 +13,8 @@ const App = ()=>{
   <Route path="/roulette" element={<Roulette/>} />
 </Routes>
 
-  )
+
+)
 };
 
 
