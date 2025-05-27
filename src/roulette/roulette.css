@@ -11,8 +11,45 @@ height: 1920px;
 .trophy{
     height: 70px;
     width: 70px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
+.hoody{
+  margin-bottom: 7px;
+  height: 60px;
+  width: 60px;
+}
+.tShirt{
+  margin-bottom: 5px;
+  width: 65px;
+  height: 55px;
+}
+.cup{
+    height: 70px;
+    width: 80px;
+    margin-bottom: 10px;
+    margin-right: -10px;
+}
+.chapeau{
+    height: 55px;
+    width: 60px;
+    margin-bottom: 10px;
+    margin-left: -3px;
+}
+
+.mug{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+.socks{
+    height: 50px;
+    width: 60px;
+    margin-bottom: 10px;
+    margin-left: -5px;
+}
+
 .headphones{
     height: 65px;
     width: 80px;
@@ -47,7 +84,8 @@ height: 1920px;
     transform: scale(1.5);
 }
 .circle {
-  width: 400px;
+  border: solid 10px rgb(16, 137, 211);
+  width: 425px;
   height: 400px;
   background-color: white;
   border-radius: 50%;
@@ -57,12 +95,13 @@ height: 1920px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  justify-content: center;
 }
 
 .lanceButton{
     position: relative;
     top: 20%;
-    left: 145px;
+    left: 170px;
     width: 110px;
     height: 45px;
     border-radius: 10px;
@@ -82,12 +121,16 @@ color: white;
   }
 }
 
+.headphones{
+  height: 60px;
+}
+
 
 .shape>img{
     transform: rotate(180deg); 
 }
-.shapeLose>p{
-      transform: rotate(180deg); 
+.psocks{
+  margin-left: 15px;
 }
 .p{
     text-align: center;
@@ -102,8 +145,10 @@ transform: rotate(180deg);}
   transform-origin: bottom center;
 }
 
+
+
 .shape {
-  width: 80px;
+  width: 100px;
   height: 250px;
   background: linear-gradient(to top, blue, cyan);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -118,13 +163,15 @@ transform: rotate(180deg);}
   margin-right: 40px;
 }
 
+
+
 .shapeLose{
-  width: 80px;
+  width: 100px;
   height: 250px;
   margin-left: 40px;
   margin-top: -20px;
-  
-  background: linear-gradient(to top, cyan , rgb(213, 244, 244));
+
+    background: linear-gradient(to top, cyan , rgb(213, 244, 244)); 
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   border-radius: 60px;
   transition: transform 0.3s;
