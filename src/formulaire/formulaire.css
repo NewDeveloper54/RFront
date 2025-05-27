@@ -7,6 +7,7 @@
   border: 5px solid rgb(235, 234, 234);
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
   margin: 20px;
+  margin-bottom: 80px;
 }
 
 .heading {
@@ -165,7 +166,7 @@ Link{
 
 
 #formulaire{
-    height: 1920px;
+    height: 1900px;
     display: flex;
     justify-content: center;
     align-items: center;
