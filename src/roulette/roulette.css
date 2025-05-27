@@ -103,8 +103,8 @@ transform: rotate(180deg);}
 }
 
 .shape {
-  width: 120px;
-  height: 230px;
+  width: 80px;
+  height: 250px;
   background: linear-gradient(to top, blue, cyan);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   border-radius: 60px;
@@ -113,13 +113,17 @@ transform: rotate(180deg);}
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  margin-left: 0px;
+  margin-top: -20px;
+  margin-right: 40px;
 }
 
 .shapeLose{
   width: 80px;
+  height: 250px;
   margin-left: 40px;
   margin-top: -20px;
-  height: 250px;
+  
   background: linear-gradient(to top, cyan , rgb(213, 244, 244));
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   border-radius: 60px;
