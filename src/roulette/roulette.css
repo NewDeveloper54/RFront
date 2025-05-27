@@ -8,6 +8,15 @@ flex-direction: column;
 align-items: center;
 height: 1920px;
 }
+.trophy{
+    height: 70px;
+    width: 70px;
+    margin-bottom: 8px;
+}
+.headphones{
+    height: 65px;
+    width: 80px;
+}
 
 .rouletteBtn{
     opacity: 0;

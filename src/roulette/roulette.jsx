@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './roulette.css';
 import hoody from "../assets/hoodyBG.png";
 import trophy from "../assets/trophee.png";
+import headphones from "../assets/headphones.png";
+import surpris from "../assets/surpris.png";
 import { Link } from 'react-router-dom';
 
 
@@ -22,8 +24,8 @@ const Roulette = () => {
   const infos = {
     1: { img: hoody, title: "hoody", class: "hoody" },
     2: { img: trophy, title: "Roi de la journée", class: "trophy" },
-    3: { img: hoody, title: "fd", class: "hoody" },
-    4: { img: hoody, title: "ffdfd", class: "hoody" },
+    3: { img: headphones, title: "headphones", class: "headphones" },
+    4: { img: surpris, title: "oops", class: "oops" },
     5: { img: hoody, title: "fdfdfd", class: "hoody" },
     6: { img: hoody, title: "g", class: "hoody" },
     7: { img: hoody, title: "gggg", class: "hoody" },
@@ -81,7 +83,7 @@ const Roulette = () => {
               >
                 <div className="shape">
                   <p className="p">{info.title}</p>
-                  <img src={info.img} height="80px" width="80px" alt={`triangle-${i + 1}`} />
+                  <img src={info.img} height="80px" width="80px" className={info.class} alt={`triangle-${i + 1}`} />
                 </div>
               </div>
             );
@@ -99,7 +101,9 @@ const Roulette = () => {
                 key={`lose-${i}`}
               >
                 <div className="shapeLose lose-shape">
-                  <p className="lose-text">Oops, il n ya rien cette fois</p>
+                  <p style={{fontSize:"10px",fontWeight:"bold",fontFamily:"arial", width:"50px", textAlign:"center"}} className="lose-text">Oops</p>
+                  <img style={{transform:"rotate(180deg)", marginBottom:"10px"}} src={surpris} height="40px" width="40px" alt="" />
+
                 </div>
               </div>
             );
