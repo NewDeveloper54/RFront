@@ -10,6 +10,7 @@ import socks from "../assets/socks.png";
 import cup from "../assets/cup.png";
 import chapeau from "../assets/chapeau.png";
 import { Link } from 'react-router-dom';
+import pointer from "../assets/pointer.png";
 
 const Roulette = () => {
 
@@ -18,6 +19,7 @@ const Roulette = () => {
 
 
   const [isShown, setIsShown] = useState("");
+  const [isShown2, setIsShown2] = useState("");
   const [isDown, setIsDown] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [winnerIndex, setWinnerIndex] = useState(null);
@@ -69,10 +71,15 @@ useEffect(() => {
       setIsShown(isShown === "shown" ? "" : "shown");
     }, 5000);
 
+
+   setTimeout(() => {
+  setIsShown2(isShown2 === "show" ? "" : "show"); 
+}, 200);
+
     const btn = document.querySelector(".lanceButton");
     if (btn) {
       btn.style.opacity = "0";
-      btn.style.transition = "1s";
+      btn.style.transition = "0.5s";
     }
 
     const randomIndex = Math.floor(Math.random() * 16);
@@ -156,12 +163,16 @@ className={`${isLose ? "lose-text" : "p"} ${info.pclass}`}
           <button onClick={handleSpin} className={`lanceButton ${isDown ? "down" : ""}`}>
             Lancer
           </button>
+          <img 
+  className={`pointerImg ${isShown2}`}
+           src={pointer} alt="" />
         </div>
 
         {winnerIndex !== null && !isSpinning && (
           <div className="result">
             
-            <h2 style={{fontFamily:"arial", color:"white"}}> {value}  </h2>
+            <h2
+            style={{fontFamily:"arial", color:"white",  height:"100px", display:"flex", alignItems:"end"}}> {value}  </h2>
           </div>
         )}
 

@@ -75,6 +75,7 @@ height: 1900px;
     opacity: 1;
     transition: 1s;
 }
+
 .rouleteLink{
     width: 100px;
     display: flex;
@@ -216,3 +217,20 @@ transform: rotate(180deg);}
     justify-content: space-around;
     align-items: center;
 }
+
+.pointerImg {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 200px;
+  top: 480px;
+  transform: rotate(44deg);
+}
+
+.pointerImg.show {
+  opacity: 1;
+}
+
+
