@@ -48,8 +48,7 @@ const Roulette = () => {
 
   const [value, setValue] = useState("");
 
-
-useEffect(() => {
+{/* useEffect(() => {
   const current = infos[winnerIndex];
 
   if (!current) return; 
@@ -59,12 +58,54 @@ useEffect(() => {
   } else {
     setValue(`Vous avez gagné : ${current.title}`);
   }
+}, [winnerIndex]);  */}
+
+
+useEffect(() => {
+  const current = infos[winnerIndex];
+
+  if (!current) return;
+
+  let gainText = "";
+  let gainToSend = "";
+
+  if (current.title === "Oops") {
+    gainText = "Oops, vous n'avez pas ganné cette fois-ci!";
+    gainToSend = "OOps, vous n'avez pas gagné cette fois-ci!";
+  } else {
+    gainText = `Vous avez gagné : ${current.title}`;
+    gainToSend = current.title;
+  }
+
+  setValue(gainText);
+
+  // Envoi vers le backend
+  const email = localStorage.getItem("participantEmail");
+  if (email) {
+    fetch(`http://localhost:5000/api/participants/${email}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ gain: gainToSend }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Participant mis à jour avec gain :", data);
+      })
+      .catch((err) => {
+        console.error("Erreur mise à jour gain :", err);
+      });
+  }
 }, [winnerIndex]);
+
+
+
+
 
 
   const handleSpin = () => {
     if (isSpinning) return;
 
+  
     setIsDown(true);
     setIsSpinning(true);
     setTimeout(() => {

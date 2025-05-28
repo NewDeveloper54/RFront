@@ -24,7 +24,7 @@ const Formulaire = () => {
 
   const handleAddParticipant = async () => {
     if (nom && prenom && email) {
-      const newParticipant = { nom, prenom, email };
+      const newParticipant = { nom, prenom, email, gain:"" };
       try {
         const res = await fetch("http://localhost:5000/api/participants", {
           method: "POST",
@@ -33,6 +33,9 @@ const Formulaire = () => {
         });
         const newParticipantFromAPI = await res.json();
         setParticipant((prev) => [newParticipantFromAPI, ...prev]);
+
+              localStorage.setItem("participantEmail", email);
+        // Stocke l'email du participant dans le localStorage
         // Après l'ajout, on redirige vers /roulette
         navigate("/roulette");
       } catch (error) {
@@ -44,7 +47,7 @@ const Formulaire = () => {
 
   {/* if(nom && prnom && email) */}
 
-  
+
   return (
     <div id="formulaire">
       <div className="container">
