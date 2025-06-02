@@ -12,7 +12,7 @@ const Formulaire = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/participants");
+        const response = await fetch("https://rback-t98q.onrender.com/api/participants");
         const data = await response.json();
         setParticipant(data);
       } catch (error) {
@@ -108,6 +108,24 @@ const Formulaire = () => {
           />
         </form>
       </div>
+      <div style={{ display: "flex", justifyContent: "flex-end", padding: "15px",
+         position:"absolute",left:"80%",bottom:"80%",
+         height:"60px", width:"200px"}}>
+  <button
+    onClick={() => navigate("/joueurs")}
+    style={{
+      backgroundColor: "#3498db",
+      color: "white",
+      padding: "10px 20px",
+      border: "none",
+      borderRadius: "20px",
+      cursor: "pointer",
+      background: "linear-gradient(45deg, #108DD3 0%,rgb(12, 112, 135) 100%)" 
+    }}
+  >
+    Voir les joueurs
+  </button>
+</div>
     </div>
   );
 };

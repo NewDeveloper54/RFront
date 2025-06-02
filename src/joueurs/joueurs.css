@@ -1,0 +1,71 @@
+.joueurs-page {
+  height: 100vh;
+  margin: 0;
+ 
+  font-family: sans-serif;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.container-joueurs {
+  max-width: 90%;
+  margin-top: 80px;
+}
+
+.joueurs-table {
+  background: linear-gradient(45deg, #108DD3 0%, rgb(12, 112, 135) 100%);
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.joueurs-table th,
+.joueurs-table td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.joueurs-table th {
+  text-align: left;
+  background-color: #1478b2;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+
+.joueurs-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.joueurs-table tbody td {
+  position: relative;
+}
+
+.joueurs-table tbody td:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+.retour-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #108DD3 0%, rgb(12, 112, 135) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
