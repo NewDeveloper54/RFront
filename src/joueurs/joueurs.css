@@ -59,8 +59,8 @@
 }
 .retour-btn {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 50px;
+  left: 30px;
   padding: 10px 20px;
   background: linear-gradient(45deg, #108DD3 0%, rgb(12, 112, 135) 100%);
   color: white;
