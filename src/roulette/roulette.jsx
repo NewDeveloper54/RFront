@@ -25,7 +25,7 @@ const Roulette = () => {
   const [winnerIndex, setWinnerIndex] = useState(null);
   const [isSpinning, setIsSpinning] = useState(false);
 
-  const segments = Array.from({ length: 16 }); 
+  const triangles = Array.from({ length: 16 }); 
 
   const infos = {
     0: { img: hoody, title: "hoody", class: "hoody" },
@@ -82,7 +82,7 @@ useEffect(() => {
   // Envoi vers le backend
   const email = localStorage.getItem("participantEmail");
   if (email) {
-    fetch(`http://localhost:5000/api/participants/${email}`, {
+    fetch(`https://rback-t98q.onrender.com/api/participants/${email}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ gain: gainToSend }),
@@ -143,7 +143,7 @@ useEffect(() => {
             className="circle"
             style={{ transform: `rotate(${rotation}deg)`, transition: 'transform 4s ease-out' }}
           >
-            {segments.map((_, i) => {
+            {triangles.map((_, i) => {
               const info = infos[i];
               const isLose = i % 2 ===1;
               const angle = i * (360 / 16);

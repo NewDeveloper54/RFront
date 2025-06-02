@@ -26,7 +26,7 @@ const Formulaire = () => {
     if (nom && prenom && email) {
       const newParticipant = { nom, prenom, email, gain:"" };
       try {
-        const res = await fetch("http://localhost:5000/api/participants", {
+        const res = await fetch("https://rback-t98q.onrender.com/api/participants", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newParticipant)
