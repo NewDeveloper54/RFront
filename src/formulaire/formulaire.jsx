@@ -109,7 +109,7 @@ const Formulaire = () => {
         </form>
       </div>
       <div style={{ display: "flex", justifyContent: "flex-end", padding: "15px",
-         position:"absolute",left:"75%",bottom:"90%",
+         position:"absolute",left:"75%",bottom:"0%",
          height:"60px", width:"200px"}}>
   <button
     onClick={() => navigate("/joueurs")}
