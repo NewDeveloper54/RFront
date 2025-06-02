@@ -4,6 +4,7 @@ import './joueurs.css';
 
 const Joueurs = () => {
   const [joueurs, setJoueurs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,6 +15,8 @@ const Joueurs = () => {
         setJoueurs(data);
       } catch (error) {
         console.error("Erreur lors de la récupération des joueurs :", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -25,31 +28,43 @@ const Joueurs = () => {
       <button className="retour-btn" onClick={() => navigate('/')}>
         Retour au formulaire
       </button>
-      <div className="container-joueurs">
-        <h2 style={{ color: "#fff", textAlign: "center" }}>Liste des joueurs</h2>
-        <table className="joueurs-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nom</th>
-              <th>Prénom</th>
-              <th>Email</th>
-              <th>Gain</th>
-            </tr>
-          </thead>
-          <tbody className='tbody-joueurs'>
-            {joueurs.map((joueur, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{joueur.nom}</td>
-                <td>{joueur.prenom}</td>
-                <td>{joueur.email}</td>
-                <td>{joueur.gain || "Pas encore gagné"}</td>
+
+      {loading ? (
+        <div className="wrapper">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="shadow"></div>
+          <div className="shadow"></div>
+          <div className="shadow"></div>
+        </div>
+      ) : (
+        <div className="container-joueurs">
+          <h2 style={{ color: "#fff", textAlign: "center" }}>Liste des joueurs</h2>
+          <table className="joueurs-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Gain</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody className="tbody-joueurs">
+              {joueurs.map((joueur, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{joueur.nom}</td>
+                  <td>{joueur.prenom}</td>
+                  <td>{joueur.email}</td>
+                  <td>{joueur.gain || "Pas encore gagné"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
