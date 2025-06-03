@@ -7,6 +7,7 @@ const Formulaire = () => {
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
+  const [telephone, setTelephone]= useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,8 +24,8 @@ const Formulaire = () => {
   }, []);
 
   const handleAddParticipant = async () => {
-    if (nom && prenom && email) {
-      const newParticipant = { nom, prenom, email, gain:"" };
+    if (nom && prenom && email && telephone) {
+      const newParticipant = { nom, prenom, email, telephone, gain:"" };
       try {
         const res = await fetch("https://rback-t98q.onrender.com/api/participants", {
           method: "POST",
@@ -101,11 +102,26 @@ const Formulaire = () => {
             <span onClick={() => setEmail("")} className={`clear-icon ${email ? "show" : ""}`}>×</span>
           </div>
 
+          <div className="input-wrapper">
+            <input
+              required
+              onInput={(e) => setTelephone(e.target.value)}
+              value={telephone}
+              className="input"
+type="tel"
+              name="telephone"
+              id="telephone"
+              placeholder="telephone"
+            />
+            <span onClick={() => setTelephone("")} className={`clear-icon ${telephone ? "show" : ""}`}>×</span>
+          </div>
+
           <input
             className="login-button"
             type="submit"
             value="Valider et passer à la roulette"
           />
+          
         </form>
       </div>
       <div style={{ display: "flex", justifyContent: "flex-end", padding: "15px",

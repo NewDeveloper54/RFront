@@ -30,14 +30,14 @@ const Joueurs = () => {
       </button>
 
       {loading ? (
-        <div className="wrapper">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="shadow"></div>
-          <div className="shadow"></div>
-          <div className="shadow"></div>
-        </div>
+       <div className="loader-wrapper">
+  <div className="loader-ball"></div>
+  <div className="loader-ball"></div>
+  <div className="loader-ball"></div>
+  <div className="loader-shadow"></div>
+  <div className="loader-shadow"></div>
+  <div className="loader-shadow"></div>
+</div>
       ) : (
         <div className="container-joueurs">
           <h2 style={{ color: "#fff", textAlign: "center" }}>Liste des joueurs</h2>
@@ -48,6 +48,7 @@ const Joueurs = () => {
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
+                <th>Telephone</th>
                 <th>Gain</th>
               </tr>
             </thead>
@@ -58,6 +59,7 @@ const Joueurs = () => {
                   <td>{joueur.nom}</td>
                   <td>{joueur.prenom}</td>
                   <td>{joueur.email}</td>
+                    <td>{joueur.telephone}</td>
                   <td>{joueur.gain || "Pas encore gagné"}</td>
                 </tr>
               ))}
