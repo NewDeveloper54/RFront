@@ -9,7 +9,7 @@ const Formulaire = () => {
   const [email, setEmail] = useState("");
   const [telephone, setTelephone]= useState("");
   const navigate = useNavigate();
-
+//http://localhost:5000
   useEffect(() => {
     const fetchData = async () => {
       try {
